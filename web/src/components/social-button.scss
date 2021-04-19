@@ -1,0 +1,15 @@
+@import '../styles/media-queries.scss';
+@import '../styles/vars.scss';
+
+.social-icon {
+  padding-bottom: 0.3em;
+  width: 25px;
+  height: 25px;
+  transition: 0.25s border ease;
+  filter: invert(1);
+  border-bottom: 1px solid transparent;
+}
+.social-icon:hover {
+  // Use black since icon color is inverted
+  border-bottom: 1px solid $color-black !important;
+}

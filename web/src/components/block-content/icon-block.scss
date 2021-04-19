@@ -1,0 +1,17 @@
+@import "../../styles/media-queries.scss";
+@import "../../styles/vars.scss";
+
+.root {
+  margin: 2rem 0;
+  padding: 0;
+
+  // @nest & img {
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.caption {
+  margin-top: 0.5rem;
+}

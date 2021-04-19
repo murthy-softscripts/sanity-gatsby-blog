@@ -1,0 +1,229 @@
+@import './vars.scss';
+@import '../styles/media-queries.scss';
+
+@font-face {
+  font-display: swap;
+  // font-display: fallback;
+  font-family: 'averta_demo_pe_regular';
+  src: url('avertademope-regular-webfont.woff2') format('woff2'),
+    url('avertademope-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-display: block;
+  // font-display: fallback;
+  font-display: swap;
+  font-family: 'averta-semibold';
+  src: url('averta_semibold-webfont.woff2') format('woff2'),
+    url('averta_semibold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-display: block;
+  // font-display: fallback;
+  font-display: swap;
+  font-family: 'averta-semibold';
+  src: url('averta_semibold-webfont.woff2') format('woff2'),
+    url('averta_semibold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-display: block;
+  // font-display: fallback;
+  font-display: swap;
+  font-family: 'avertabold';
+  src: url('averta-bold-webfont.woff2') format('woff2'),
+    url('averta-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'avertabold';
+  src: url('averta-bolditalic-webfont.woff2') format('woff2'),
+    url('averta-bolditalic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
+html {
+  font-family: 'averta_demo_pe_regular', -apple-system, BlinkMacSystemFont,
+    sans-serif;
+  font-size: 1rem;
+  // line-height: $font-base-line-height;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  background: $color-grey;
+  color: $color-white;
+  margin: 0;
+  font-family: 'averta_demo_pe_regular', sans-serif;
+}
+
+input {
+  font-family: 'averta_demo_pe_regular', sans-serif;
+}
+
+p {
+  font-weight: 50;
+  font-size: 1em;
+  line-height: 1.25em;
+  letter-spacing: 1px;
+}
+
+h1 {
+  font-family: 'averta-semibold', sans-serif;
+  font-size: 3.5em;
+  font-weight: 200;
+}
+h2 {
+  font-family: 'averta-semibold', sans-serif;
+  font-size: 3em;
+  font-weight: 200;
+}
+h3 {
+  font-family: 'averta-semibold', sans-serif;
+  font-size: 2.5em;
+  font-weight: 200;
+}
+
+html,
+body,
+body > div,
+body > div > div {
+  height: 100%;
+}
+
+.layout--site-title {
+  padding: 0em 0.5em 0em 0.5em;
+}
+
+.layout--header--title {
+  font-family: 'averta-semibold', sans-serif;
+  font-size: 64px;
+  font-weight: 200;
+  width: 100%;
+  text-align: center;
+
+  color: $color-accent;
+  display: block;
+  padding: 1rem 0rem 1rem 0rem;
+  margin: auto;
+
+  @media (max-width: $media-max-medium) {
+    font-size: 40px;
+  }
+
+  @media (max-width: $media-max-small) {
+    font-size: 32px;
+  }
+}
+
+.layout--content {
+  min-height: calc(100% - 73px - 152px);
+
+  @media (min-width: $media-min-small) {
+    min-height: calc(100% - 90px - 169px);
+  }
+}
+
+.layout--footer {
+  margin-top: 4rem;
+}
+
+.layout--footer-wrapper {
+  box-sizing: border-box;
+  max-width: 960px;
+  padding: 1.5em;
+  margin: 0 auto;
+
+  @media (min-height: $media-min-small) {
+    padding: 2em;
+  }
+}
+
+.layout--footer--logo {
+  margin-top: 2em;
+  margin-right: auto;
+  margin-left: auto;
+  width: fit-content;
+  img {
+    width: 10em;
+    // height: 5em;
+  }
+}
+
+.layout--company-address {
+  text-align: center;
+  margin: 0 0 1rem;
+}
+
+.layout--site-info {
+  text-align: center;
+  font-size: 1rem;
+  a {
+    color: inherit;
+  }
+  .layout--legal-a,
+  .layout--legal-b,
+  .layout--legal-c {
+    display: inline;
+    @media (max-height: $media-max-medium) {
+      display: block;
+    }
+  }
+  .layout--legal-div-1,
+  .layout--legal-div-2 {
+    display: inline;
+    @media (max-height: $media-max-medium) {
+      display: none;
+    }
+  }
+}
+
+/* width */
+
+::-webkit-scrollbar {
+  width: 2px;
+  height: 0px;
+  -webkit-appearance: always;
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+  background: rgb(30, 30, 30);
+  padding: 2.25em 1.6875em;
+  /* background-image: -webkit-repeating-radial-gradient(center center, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 1px, transparent 100%); */
+  /* -webkit-background-size: 3px 3px; */
+  /* border-radius: 5px; */
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+  background: rgb(75, 75, 75);
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(125, 125, 125);
+}
+
+.link-passthrough {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}

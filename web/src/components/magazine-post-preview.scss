@@ -1,0 +1,289 @@
+@import "../styles/media-queries.scss";
+@import "../styles/vars.scss";
+
+.magazine-post-preview {
+  --font-size-title: 24px;
+  --font-size-subtitle: 14px;
+  --font-size-body: 16px;
+
+  &:hover {
+    .magazine-post-preview--title {
+      color: $color-accent;
+    }
+    .magazine-post-preview--leadMediaThumb {
+      img {
+        filter: none;
+      }
+    }
+  }
+
+  @media (max-width: $media-max-medium) {
+    --font-size-title: 24px;
+    --font-size-subtitle: 14px;
+    --font-size-body: 16px;
+  }
+  @media (max-width: $media-max-small) {
+    --font-size-title: 24px;
+    --font-size-subtitle: 12px;
+    --font-size-body: 14px;
+  }
+
+  .magazine-post-preview--title {
+    display: block;
+    font-family: "averta-semibold", sans-serif;
+    font-size: var(--font-size-title);
+    margin-bottom: 0.4rem;
+    line-height: 1.1;
+    cursor: pointer;
+  }
+
+  .magazine-post-preview--leadMediaThumb {
+    margin-bottom: 1rem;
+    height: auto;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      filter: saturate(0);
+      @media (max-width: $media-max-medium) {
+        filter: saturate(1);
+      }
+      transition: filter 0.5s ease;
+      animation: fadeInMagazineImg 1s ease forwards;
+    }
+  }
+
+  .magazine-post-preview--category {
+    font-size: var(--font-size-subtitle);
+    text-decoration: underline;
+    color: $color-accent;
+    margin-bottom: 1rem;
+    a {
+      // display: block;
+      margin-right: 0.5rem;
+    }
+  }
+
+  .magazine-post-preview--author {
+    cursor: pointer;
+    // font-style: italic;
+    font-size: var(--font-size-subtitle);
+    margin-bottom: 1.5rem;
+  }
+
+  .magazine-post-preview--excerpt {
+    // font-style: italic;
+    cursor: pointer;
+    font-size: var(--font-size-body);
+    p {
+      display: inline;
+    }
+    a {
+      color: $color-accent;
+    }
+  }
+
+  .magazine-post-preview--link {
+    display: inline;
+    font-size: var(--font-size-body);
+    color: $color-accent;
+    font-weight: bold;
+    white-space: nowrap;
+  }
+
+  // BANNER
+  &.banner {
+    --font-size-title: 64px;
+    --font-size-subtitle: 14px;
+    --font-size-body: 24px;
+
+    @media (max-width: $media-max-medium) {
+      --font-size-title: 40px;
+      --font-size-subtitle: 12px;
+      --font-size-body: 16px;
+    }
+    @media (max-width: $media-max-small) {
+      --font-size-title: 32px;
+      --font-size-subtitle: 12px;
+      --font-size-body: 16px;
+    }
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    grid-column: span 12;
+    padding: 8rem 2rem;
+    color: inherit;
+    text-decoration: none;
+    position: relative;
+    margin: 0 -2rem;
+
+    @media (max-width: $media-max-medium) {
+      padding: 1rem 2rem;
+    }
+    @media (max-width: $media-max-small) {
+      padding: 4rem 2rem;
+    }
+
+    .magazine-post-preview--banner--bg {
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      position: absolute;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+      opacity: 0.3;
+      z-index: -1;
+    }
+
+    .magazine-post-preview--link {
+      text-decoration: none;
+      font-weight: bold;
+    }
+  }
+
+  // LARGE
+  &.large {
+    grid-column: span 12;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-flow: dense;
+    column-gap: 2rem;
+    // margin-bottom: 6rem;
+
+    --font-size-title: 48px;
+    --font-size-subtitle: 16px;
+    --font-size-body: 24px;
+
+    @media (max-width: $media-max-medium) {
+      --font-size-title: 36px;
+      --font-size-subtitle: 12px;
+      --font-size-body: 18px;
+    }
+    @media (max-width: $media-max-small) {
+      --font-size-title: 24px;
+      --font-size-subtitle: 12px;
+      --font-size-body: 16px;
+    }
+
+    &.reversed {
+      @media (min-width: $media-max-medium) {
+        .magazine-post-preview--text-group {
+          grid-column: 1 / span 3;
+        }
+        .magazine-post-preview--leadMediaThumb {
+          grid-column: 4 / span 3;
+        }
+      }
+    }
+
+    .magazine-post-preview--leadMediaThumb {
+      grid-column: span 3;
+    }
+
+    @media (max-width: $media-max-medium) {
+      margin-left: 4em;
+      margin-right: 4em;
+    }
+
+    @media (max-width: $media-max-small) {
+      margin-left: 0;
+      margin-right: 0;
+      .magazine-post-preview--leadMediaThumb {
+        grid-column: span 3;
+        margin-left: -2em;
+        margin-right: -2em;
+      }
+    }
+
+    .magazine-post-preview--text-group {
+      display: flex;
+      flex-direction: column;
+      grid-column: span 3;
+    }
+
+    @media (max-width: $media-max-medium) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &.large.magazine-page {
+    margin-bottom: 6rem;
+  }
+
+  // MEDIUM
+  &.medium {
+    display: flex;
+    flex-direction: column;
+    grid-column: span 4;
+    margin-bottom: 3rem;
+
+    --font-size-title: 24px;
+    --font-size-subtitle: 14px;
+
+    @media (max-width: $media-max-medium) {
+      grid-column: span 6;
+
+      &.last {
+        grid-column: 4 / span 6;
+      }
+
+      // grid-column: 2 / span 4;
+      --font-size-title: 24px;
+      --font-size-subtitle: 12px;
+    }
+    @media (max-width: $media-max-small) {
+      grid-column: span 12;
+
+      &.last {
+        grid-column: span 12;
+      }
+
+      --font-size-title: 24px;
+      --font-size-subtitle: 12px;
+    }
+  }
+
+  &.medium.index-page-mobile-hide {
+    @media (max-width: $media-max-medium) {
+      display: none;
+    }
+  }
+
+  //SMALL
+  &.small {
+    margin: 1.5rem 0;
+
+    --font-size-title: 24px;
+    --font-size-subtitle: 14px;
+
+    @media (max-width: $media-max-medium) {
+      --font-size-title: 24px;
+      --font-size-subtitle: 12px;
+    }
+    @media (max-width: $media-max-small) {
+      --font-size-title: 16px;
+      --font-size-subtitle: 12px;
+    }
+
+    .magazine-post-preview--author {
+      margin-bottom: 0;
+    }
+  }
+
+  @keyframes fadeInMagazineImg {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+}

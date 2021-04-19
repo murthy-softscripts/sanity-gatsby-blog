@@ -1,0 +1,374 @@
+@import "../styles/vars.scss";
+@import "../styles/media-queries.scss";
+
+$height: 28em;
+$height-padded: $height + 4.6em;
+$main-max: calc(min(65vw, 65vh));
+$max-height-main: 560px;
+
+.carousel--wrapper {
+  height: calc(100vh - 80px);
+}
+
+.carousel--main {
+  position: relative;
+  background: $color-grey;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-top: calc(50vh - calc(28em / 2) - 80px);
+  width: $height;
+  height: $height;
+  border-radius: $height;
+  @media (max-width: $media-max-medium) {
+    width: calc(#{$main-max});
+    height: calc(#{$main-max});
+    border-radius: calc(#{$main-max});
+  }
+  margin-left: auto;
+  margin-right: auto;
+  transition: background-image 0.5s ease-in-out;
+}
+.carousel--main--center--crop {
+  position: absolute;
+  width: $height;
+  height: $height;
+  border-radius: $height;
+  overflow: hidden;
+  @media (max-width: $media-max-medium) {
+    width: calc(#{$main-max});
+    height: calc(#{$main-max});
+    border-radius: calc(#{$main-max});
+  }
+}
+.carousel--main--image {
+  width: $height;
+  position: absolute;
+  border-radius: $height;
+  filter: saturate(0);
+  @media (max-width: $media-max-medium) {
+    width: calc(#{$main-max});
+    // height: calc(#{$main-max});
+    border-radius: calc(#{$main-max});
+  }
+}
+@keyframes fadeInCarouselImage {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeOutCarouselImage {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.carousel--main--image--fade-out {
+  animation: fadeOutCarouselImage 1s ease forwards;
+}
+
+.carousel--main--image--fade-in {
+  opacity: 1;
+  animation: fadeInCarouselImage 1s ease forwards;
+}
+
+.carousel--intro {
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+  border-radius: $height;
+  height: $height;
+  width: $height;
+  transform: scale(1.02);
+  // filter: blur(0px);
+  @media (max-width: $media-max-medium) {
+    width: calc(#{$main-max});
+    height: calc(#{$main-max});
+    border-radius: calc(#{$main-max});
+  }
+  z-index: 6;
+  pointer-events: none;
+  overflow: hidden;
+  opacity: 1;
+  transition: opacity 1s ease;
+  // animation: carouselIntroFadeOut 1s ease 3s forwards;
+}
+.carousel--intro-fade-out {
+  animation: fadeOutIntro 1s ease 0s forwards;
+}
+@keyframes fadeOutIntro {
+  0% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+@keyframes carouselIntroFadeOut {
+  0% {
+    // filter: blur(0px);
+    opacity: 1;
+  }
+  50% {
+    // filter: blur(0px);
+    opacity: 1;
+  }
+  100% {
+    // filter: blur(5px);
+    opacity: 0;
+    display: none;
+  }
+}
+.carousel--feature {
+  z-index: 6;
+  display: none;
+}
+@keyframes buttonsFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.1;
+  }
+}
+.carousel--intro--bg {
+  border-radius: $height;
+  height: $height;
+  width: $height;
+  // transform: scale(1.02);
+  overflow: hidden;
+  @media (max-width: $media-max-medium) {
+    width: calc(#{$main-max});
+    height: calc(#{$main-max});
+    border-radius: calc(#{$main-max});
+  }
+  img {
+    transform: scale(1.02);
+    width: 100%;
+    height: 100%;
+    border-radius: $height;
+    // opacity: 0.6;
+    background-color: #333;
+    // transition: 1s opacity ease;
+  }
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: $color-grey;
+  background-position: center;
+  z-index: 2;
+  opacity: 1;
+
+   @media (max-width: $media-max-medium) {
+    display:none;
+  }
+
+  // animation: carouselIntroFadeOut 1s ease 5s forwards;
+}
+.carousel--intro--title {
+  font-size: calc(#{$height} / 10.5);
+  font-family: "averta-semibold", sans-serif;
+  font-weight: 200;
+  color: $color-accent;
+  text-align: center;
+  width: fit-content;
+  height: 2em;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 5;
+  @media (max-width: $media-max-medium) {
+    font-size: calc(#{$main-max} / 10.5);
+  }
+}
+.carousel--left--overlay {
+  background-color: $color-secondary-transparent;
+  position: absolute;
+  width: calc(#{$height} / 2);
+  height: $height;
+  border-top-left-radius: $height;
+  border-bottom-left-radius: $height;
+
+  @media (max-width: $media-max-medium) {
+    width: calc(#{$main-max} / 2);
+    height: calc(#{$main-max});
+    border-top-left-radius: calc(#{$main-max});
+    border-bottom-left-radius: calc(#{$main-max});
+  }
+}
+.carousel--left {
+  position: absolute;
+  width: calc(#{$height} / 2);
+  height: $height;
+  border-top-left-radius: $height;
+  border-bottom-left-radius: $height;
+  background-size: calc(#{$height} / 2.3);
+  background-position-y: calc(#{$height} / 4);
+  background-position-x: 1.5em;
+  background-repeat: no-repeat;
+
+  @media (max-width: $media-max-medium) {
+    width: calc(#{$main-max} / 2);
+    height: calc(#{$main-max});
+    border-top-left-radius: calc(#{$main-max});
+    border-bottom-left-radius: calc(#{$main-max});
+    background-size: 0;
+    background-position-y: calc(#{$main-max} / 2.45);
+    background-position-x: 1.5em;
+  }
+}
+
+.carousel--right {
+  position: relative;
+  left: calc(#{$height} / 2);
+  width: calc(#{$height} / 2);
+  height: $height;
+  border-bottom-right-radius: $height;
+  border-top-right-radius: $height;
+
+  @media (max-width: $media-max-medium) {
+    left: calc(#{$main-max} / 2);
+    width: calc(#{$main-max} / 2);
+    height: calc(#{$main-max});
+    border-bottom-right-radius: calc(#{$main-max});
+    border-top-right-radius: calc(#{$main-max});
+  }
+
+  background-color: #00000022;
+}
+
+.carousel--logo {
+  position: relative;
+  right: 0.9em;
+  top: 2.4em;
+  line-height: 0.8em;
+  text-align: right;
+}
+
+.carousel--title {
+  position: absolute;
+  right: 0.3em;
+  // font-size: calc(#{$height} / 10.5);
+  font-size: 44px;
+  top: calc(#{$height} / 4);
+  white-space: nowrap;
+  @media (max-width: $media-max-medium) {
+    text-align: right;
+    white-space: normal;
+    width: calc(#{$main-max} * 0.4);
+
+    font-size: calc(#{$main-max} / 6);
+    top: calc(#{$main-max} / 2.35);
+  }
+  line-height: 0.8em;
+  text-align: left;
+  font-family: "avertabold", sans-serif;
+  font-weight: 200;
+}
+
+.carousel--subtitle {
+  position: absolute;
+  right: 1em;
+  top: calc(#{$height} * 0.82);
+  text-align: right;
+  font-size: 0.8em;
+  font-weight: 300;
+  @media (max-width: $media-max-medium) {
+    display: none;
+    // top: calc(#{$main-max} * 0.88);
+  }
+}
+
+.carousel--name {
+  position: absolute;
+  left: 1em;
+  top: calc(#{$height} * 0.82);
+  text-align: left;
+  font-size: 0.8em;
+  font-weight: 300;
+  @media (max-width: $media-max-medium) {
+    display: none;
+    // top: calc(#{$main-max} * 0.88);
+  }
+}
+
+.carousel--button {
+  width: 3em;
+  height: 3em;
+  border: none;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 4px;
+  opacity: 0.5;
+  outline: 0;
+  z-index: 5;
+  cursor: pointer;
+  // animation: buttonsFadeIn 1s ease 5s forwards;
+}
+.carousel--button:hover,
+.carousel--button--down:hover {
+  opacity: 1;
+}
+.carousel--button--left {
+  position: absolute;
+  right: 0em;
+  bottom: 1em;
+  @media (max-width: $media-max-medium) {
+    position: absolute;
+    top: calc(#{$main-max} / 2.3);
+    right: calc(#{$main-max} / 2);
+  }
+}
+.carousel--button--right {
+  position: absolute;
+  left: 0em;
+  bottom: 1em;
+  @media (max-width: $media-max-medium) {
+    position: relative;
+    top: calc(#{$main-max} / 2.3);
+    left: calc(#{$main-max} / 2);
+  }
+}
+.carousel--button--down {
+  margin-top: 1.5em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  @media (max-width: $media-max-medium) {
+    position: absolute;
+    bottom: -4em;
+    left: 0px;
+    right: 0px;
+  }
+}
+
+.carousel--logo--mobile {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 8rem;
+  // margin: 2.5em 5em 5em 5em;
+  position: absolute;
+  bottom: 2rem;
+  left: 0px;
+  right: 0px;
+  // margin: auto;
+  display: none;
+  z-index: -5;
+  @media screen and (orientation: portrait) and (max-width: $media-max-medium) {
+    display: block;
+  }
+}

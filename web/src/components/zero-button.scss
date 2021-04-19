@@ -1,0 +1,107 @@
+@import '../styles/media-queries.scss';
+@import '../styles/vars.scss';
+
+.zero-button {
+  background-color: transparent;
+  border: none;
+  outline: 0;
+  padding-left: 0px;
+  padding-right: 0px;
+  display: block;
+  position: relative;
+  user-select: none;
+  transition: border 0.5s ease;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+// .zero-button:disabled {
+//   color: $color-med-grey;
+// }
+
+.zero-button--underline {
+  position: absolute;
+  bottom: 0px;
+  height: 8px;
+  // height: 100%;
+  width: 100%;
+
+  // opacity: 0;
+  background-color: transparent;
+  transition: all 0.5s ease;
+}
+.zero-button--default-size {
+  padding: 0.2em 3em 0.2em 3em;
+}
+
+.zero-button--highlight-white:hover {
+  .zero-button--underline {
+    // width: 100%;
+    background-color: $color-white;
+  }
+}
+.zero-button--enabled.zero-button--highlight-black:hover {
+  .zero-button--underline {
+    // width: 100%;
+    background-color: $color-black;
+  }
+}
+.zero-button--highlight-accent:hover {
+  .zero-button--underline {
+    // width: 100%;
+    background-color: $color-accent;
+  }
+}
+.zero-button--highlight-secondary:hover {
+  .zero-button--underline {
+    // width: 100%;
+    background-color: $color-secondary;
+  }
+}
+
+.zero-button--underline {
+  @media (max-width: $media-max-medium) {
+    opacity: 0;
+  }
+}
+
+.zero-button--white {
+  background-color: $color-white;
+  // color: $color-black;
+}
+.zero-button--accent {
+  background-color: $color-accent;
+}
+.zero-button--secondary {
+  background-color: $color-secondary;
+}
+
+.zero-button--enabled {
+  color: $color-black;
+}
+.zero-button--disabled {
+  color: $color-grey;
+  // background-color: $color-light-grey;
+}
+
+.zero-button--wide {
+  font-family: 'averta-semibold', sans-serif;
+  width: calc(100% - 4em);
+  padding: 0.5rem 0rem 0.5rem 0rem;
+  margin: 1em 2em 1em 2em;
+  font-weight: 900;
+}
+
+.zero-button--standard {
+  font-size: 1rem;
+  font-family: 'avertabold', sans-serif;
+  padding: 1em 0em 1em 0em;
+  font-weight: 900;
+  width: 100%;
+  @media (max-width: $media-max-medium) {
+    padding: 1em 0em 1em 0em;
+  }
+  @media (max-width: $media-max-small) {
+    padding: 1em 0em 1em 0em;
+  }
+}

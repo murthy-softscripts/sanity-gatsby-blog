@@ -1,0 +1,405 @@
+@import '../styles/media-queries.scss';
+@import '../styles/vars.scss';
+
+.enlist-popup--container {
+  width: 100%;
+  position: fixed;
+  bottom: 4em;
+  display: grid;
+  grid-template-columns: 22em 3fr 3fr;
+  column-gap: 0em;
+  row-gap: 0em;
+  pointer-events: none;
+  @media (max-width: $media-max-medium) {
+    grid-template-columns: 1fr;
+  }
+  @media (max-width: $media-max-small) {
+    bottom: 2rem;
+  }
+}
+
+.enlist-popup--main {
+  pointer-events: all;
+  position: relative;
+  background: $color-accent;
+  color: $color-black;
+  font-size: 0.8em;
+  // font-weight: 300;
+  z-index: 500;
+  width: 20em;
+  min-height: 200px;
+  margin: auto;
+  // transform: translateX(-100vw);
+}
+.enlist-popup--main--init {
+  transform: translateX(-100vw);
+  animation: slideInFromLeft 1s cubic-bezier(0.38, 0, 0.2, 1) forwards;
+}
+.enlist-popup--main--bounce {
+  animation: bounceInAnimation 0.8s cubic-bezier(0.38, 0, 0.2, 1) forwards;
+}
+.enlist-popup--main--bounce-out {
+  animation: bounceOutAnimation 0.8s cubic-bezier(0.38, 0, 0.2, 1) forwards 1s;
+}
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100vw);
+  }
+  100% {
+    transform: translateX(0vw);
+  }
+}
+@keyframes bounceInAnimation {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes bounceOutAnimation {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  40% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+}
+
+// START External Form Styling
+
+.at-inner {
+  background-color: transparent !important;
+}
+
+.at-markup.HeaderHtml,
+.at-legend {
+  display: none !important;
+}
+
+.at-fieldset.ContactInformation {
+  padding-bottom: 0 !important;
+}
+
+.at-title {
+  font-family: 'avertabold', sans-serif !important;
+  font-size: 1em !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.at-legend {
+  font-family: 'avertabold', sans-serif !important;
+  font-size: 1rem !important;
+}
+.at-text {
+  margin: 0 !important;
+}
+.at-text > input {
+  font-family: 'averta-semibold', sans-serif !important;
+  width: 100% !important;
+  // margin: 1rem 0rem 0rem 0rem !important;
+  text-align: center !important;
+  // font-weight: 500 !important;
+  color: $color-black !important;
+  background-color: transparent !important;
+  border: none !important;
+  border-bottom: 0.15em solid $color-black !important;
+  outline: 0 !important;
+  border-radius: 0px !important;
+  box-shadow: black 0px 0px !important;
+  -webkit-box-shadow: 0 0 0 0px black inset !important;
+  margin-bottom: 10px !important;
+}
+
+.at-text > input::-webkit-input-placeholder {
+  /* Edge */
+  color: $color-black-transparent !important;
+}
+
+.at-text > input:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: $color-black-transparent !important;
+}
+
+.at-text > input::placeholder {
+  color: $color-black-transparent !important;
+}
+
+.didYouMean.info {
+  margin-bottom: 0px !important;
+}
+
+.at-submit.btn-at.btn-at-primary {
+  text-transform: uppercase;
+
+  color: $color-black;
+
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  outline: 0;
+  padding-left: 0px;
+  padding-right: 0px;
+  display: block;
+  position: relative;
+  user-select: none;
+  transition: border 0.5s ease;
+  cursor: pointer;
+  font-size: 1rem;
+
+  background-color: $color-white;
+
+  font-family: 'averta-semibold', sans-serif;
+  width: calc(100% - 3.5em);
+  padding: 0.5rem 0rem 0.5rem 0rem;
+  margin: 1em 2em 1em 2em;
+  font-weight: 900;
+
+  padding-top: 10px;
+  padding-bottom: 2px;
+  border-bottom: 6px solid $color-white;
+}
+.at-form-submit.clearfix {
+  padding-bottom: 0px !important;
+}
+.at-submit.btn-at.btn-at-primary:hover {
+  background-color: $color-white;
+  color: $color-black;
+  border-bottom: 6px solid black;
+}
+
+.at-form-submit > input {
+  margin-top: 0 !important;
+}
+
+// END External Form Styling
+
+.enlist-popup--title {
+  // width: 100%;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  color: $color-white;
+  display: block;
+  text-align: right;
+  font-family: 'avertabold', sans-serif;
+  font-size: 2em;
+  // font-weight: 300;
+  @media (max-width: $media-max-small) {
+    // font-weight: 300;
+  }
+}
+.enlist-popup--inner {
+  position: relative;
+  padding-top: 2em;
+  width: 100%;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  form {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+.enlist-popup--input {
+  font-family: 'averta-semibold', sans-serif;
+  width: 75%;
+  margin: 1rem 0rem 0rem 0rem;
+  text-align: center;
+  // font-weight: 500;
+  color: $color-black;
+  background-color: transparent;
+  border: none;
+  border-bottom: 0.15em solid $color-black;
+  outline: 0;
+  border-radius: 0px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px $color-accent inset !important;
+}
+
+.enlist-popup--input::-webkit-input-placeholder {
+  /* Edge */
+  color: $color-black;
+}
+
+.enlist-popup--input:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: $color-black;
+}
+
+.enlist-popup--input::placeholder {
+  color: $color-black;
+}
+
+.enlist-popup--close-button {
+  // background-color: red;
+  //
+  // float: right;
+  position: absolute;
+  right: 0.8em;
+  top: 0.8em;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 1em;
+  height: 1em;
+  border-bottom: 2px solid $color-accent;
+}
+.enlist-popup--close-button:hover {
+  border-bottom: 2px solid $color-black;
+}
+
+.enlist-popup--success-overlay {
+  min-height: 75px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  background-color: $color-accent;
+  z-index: 210;
+}
+.enlist-popup--success-overlay--text {
+  font-size: 2em;
+  height: fit-content;
+  margin: auto;
+  padding-top: 75px;
+  animation: fadeInText 1s ease forwards;
+}
+@keyframes fadeInText {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.enlist-popup--minimal {
+  background-color: transparent !important;
+  .at-text {
+    color: red !important;
+  }
+
+  // START
+
+  .at-inner {
+    background-color: transparent !important;
+  }
+
+  .at-markup.HeaderHtml,
+  .at-legend {
+    display: none !important;
+  }
+
+  .at-fieldset.ContactInformation {
+    padding-bottom: 0 !important;
+  }
+
+  .at-title {
+    display: none;
+  }
+
+  .at-legend {
+    font-family: 'avertabold', sans-serif !important;
+    font-size: 1rem !important;
+  }
+  .at-text {
+    margin: 0 !important;
+  }
+  .at-text > input {
+    font-family: 'averta-semibold', sans-serif !important;
+    width: 100% !important;
+    // margin: 1rem 0rem 0rem 0rem !important;
+    text-align: center !important;
+    // font-weight: 500 !important;
+    color: $color-white !important;
+    background-color: transparent !important;
+    border: none !important;
+    border-bottom: 0.15em solid $color-white !important;
+    outline: 0 !important;
+    border-radius: 0px !important;
+    box-shadow: black 0px 0px !important;
+    -webkit-box-shadow: 0 0 0 0px black inset !important;
+    margin-bottom: 10px !important;
+  }
+
+  .at-text > input::-webkit-input-placeholder {
+    /* Edge */
+    color: $color-white !important;
+  }
+
+  .at-text > input:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: $color-white !important;
+  }
+
+  .at-text > input::placeholder {
+    color: $color-white !important;
+  }
+
+  .didYouMean.info {
+    margin-bottom: 0px !important;
+  }
+
+  .at-submit.btn-at.btn-at-primary {
+    text-transform: uppercase;
+
+    color: $color-black;
+
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    outline: 0;
+    padding-left: 0px;
+    padding-right: 0px;
+    display: block;
+    position: relative;
+    user-select: none;
+    transition: border 0.5s ease;
+    cursor: pointer;
+    font-size: 1rem;
+
+    background-color: $color-accent;
+
+    font-family: 'averta-semibold', sans-serif;
+    width: calc(100% - 3.5em);
+    padding: 0.5rem 0rem 0.5rem 0rem;
+    margin: 1em 2em 1em 2em;
+    font-weight: 900;
+
+    padding-top: 10px;
+    padding-bottom: 2px;
+    border-bottom: 6px solid $color-accent;
+  }
+  .at-form-submit.clearfix {
+    padding-bottom: 0px !important;
+  }
+  .at-submit.btn-at.btn-at-primary:hover {
+    // background-color: $color-white;
+    color: $color-black;
+    border-bottom: 6px solid $color-white;
+  }
+
+  .at-form-submit > input {
+    margin-top: 0 !important;
+  }
+
+  // END
+}

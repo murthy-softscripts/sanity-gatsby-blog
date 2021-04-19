@@ -1,0 +1,63 @@
+@import "../styles/media-queries.scss";
+@import "../styles/vars.scss";
+
+.live-button--icon {
+  margin-right: auto;
+  margin-left: auto;
+  // transform: scale(1.2);
+  // position: absolute;
+  transition: all 1s ease;
+}
+.live-button--icon--on {
+}
+.live-button--icon path.live-text-underline {
+  opacity: 0;
+}
+.live-button--icon:hover > .live-text-underline {
+  opacity: 1;
+}
+
+.live-button--icon path.live-inner-left-ring {
+  opacity: 0;
+  animation: innerRingsAnimation 2s infinite;
+}
+.live-button--icon path.live-inner-right-ring {
+  opacity: 0;
+  animation: innerRingsAnimation 2s infinite;
+}
+.live-button--icon path.live-outer-left-ring {
+  opacity: 0;
+  animation: outerRingsAnimation 2s infinite;
+}
+.live-button--icon path.live-outer-right-ring {
+  opacity: 0;
+  animation: outerRingsAnimation 2s infinite;
+}
+@keyframes innerRingsAnimation {
+  32% {
+    opacity: 0;
+  }
+  33% {
+    opacity: 1;
+  }
+  66% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes outerRingsAnimation {
+  0% {
+    opacity: 0;
+  }
+  65% {
+    opacity: 0;
+  }
+  66% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}

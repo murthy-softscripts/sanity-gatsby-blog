@@ -1,0 +1,144 @@
+@import '../styles/media-queries.scss';
+
+.magazine-footer--grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-items: center;
+  margin: 0em 6em;
+
+  @media (max-width: $media-max-small) {
+    margin: 0em 1em;
+  }
+}
+
+.magazine-footer--grid.wide {
+  margin: 0em 2em;
+
+  @media (max-width: $media-max-small) {
+    margin: 0em 1em;
+  }
+}
+
+.magazine-footer--title {
+  grid-column: span 4;
+  color: #d3f32c;
+  font-size: 3rem;
+
+  @media (max-width: $media-max-small) {
+    font-size: 1.5rem;
+  }
+}
+
+.magazine-footer--link-group {
+  grid-column: span 4;
+  grid-column: 2 / span 2;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 2em;
+
+  .social-icon {
+    width: 50px;
+    height: 50px;
+
+    @media (max-width: $media-max-small) {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+
+.magazine-footer--link {
+  grid-column: span 1;
+  margin: auto;
+}
+.magazine-footer--dead-space {
+  grid-column: span 1;
+}
+
+.magazine-footer--prevnext {
+  grid-column: span 2;
+  width: calc(100% - 0.5em);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.magazine-footer--button {
+  font-family: 'averta-semibold', sans-serif;
+  padding: 0.9em 0em 0.9em 0em;
+  margin-top: 3em;
+  font-weight: 300;
+  font-size: 1.625rem;
+  text-align: center;
+  vertical-align: middle;
+  width: 100%;
+  text-transform: uppercase;
+
+  @media (max-width: $media-max-small) {
+    font-size: 1rem;
+  }
+}
+
+.magazine-footer--button.previous {
+  background-color: white;
+  margin-right: 0.5em;
+}
+
+.magazine-footer--button.next {
+  margin-left: 0.5em;
+}
+
+.magazine-footer--related-articles {
+  grid-column: span 4;
+  margin-top: 6em;
+  width: 100%;
+}
+
+.magazine-footer--related-title {
+  text-transform: uppercase;
+  font-size: 0.875rem;
+}
+
+.magazine-footer--article-group {
+  width: 100%;
+  grid-column-gap: 1em;
+  margin-top: 1.5em;
+}
+
+.magazine-footer--article-group--large {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  @media (max-width: $media-max-medium) {
+    display: none;
+  }
+}
+
+.magazine-footer--article-group--medium {
+  display: none;
+
+  @media (max-width: $media-max-medium) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: $media-max-small) {
+    display: none;
+  }
+}
+
+.magazine-footer--article-group--small {
+  display: none;
+
+  @media (max-width: $media-max-small) {
+    display: block;
+
+    .magazine-footer--article {
+      margin-bottom: 1em;
+    }
+  }
+}
+
+.magazine-footer-divider {
+  margin-top: 1.5em;
+}

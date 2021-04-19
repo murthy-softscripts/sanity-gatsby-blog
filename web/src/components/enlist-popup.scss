@@ -1,0 +1,19 @@
+@import '../styles/media-queries.scss';
+@import '../styles/vars.scss';
+
+.enlist-popup--container {
+  width: 100%;
+  position: fixed;
+  bottom: 4em;
+  display: grid;
+  grid-template-columns: 22em 3fr 3fr;
+  column-gap: 0em;
+  row-gap: 0em;
+  pointer-events: none;
+  @media (max-width: $media-max-medium) {
+    grid-template-columns: 1fr;
+  }
+  @media (max-width: $media-max-small) {
+    bottom: 2rem;
+  }
+}

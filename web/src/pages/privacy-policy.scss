@@ -1,0 +1,9 @@
+@import '../styles/media-queries.scss';
+@import '../styles/vars.scss';
+
+.privacy-policy--root {
+  margin: 2em;
+  a {
+    color: $color-accent;
+  }
+}

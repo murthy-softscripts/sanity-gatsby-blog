@@ -1,0 +1,231 @@
+@import "../styles/media-queries.scss";
+@import "../styles/vars.scss";
+
+.magazine-post--root {
+  max-width: 850px;
+  // margin: auto 6em auto 6em;
+  margin-left: auto;
+  margin-right: auto;
+  // margin-top: 6em;
+}
+
+.magazine-post--category--container {
+  display: block;
+  margin: 2rem 5.5rem 0rem 5.5rem;
+  @media (max-width: $media-max-small) {
+    margin: 2rem 1.875rem 2rem 1.875rem;
+    font-size: 0.75rem;
+  }
+}
+
+.magazine-post--category {
+  margin-right: 1rem;
+  color: $color-accent;
+  text-decoration: underline;
+}
+
+.magazine-post--title {
+  margin: 2rem 5.5rem 2rem 5.5rem;
+
+  font-size: 2.5rem;
+  @media (max-width: $media-max-small) {
+    font-size: 2rem;
+    margin: 2rem 1.875rem 2rem 1.875rem;
+  }
+}
+
+.magazine-post--main-image {
+  position: relative;
+  background: #eee;
+  padding-bottom: calc(9 / 16 * 100%);
+  margin: 1em;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    vertical-align: top;
+    object-fit: cover;
+  }
+
+  @media (max-width: $media-max-small) {
+    margin: 0em;
+  }
+}
+
+.magazine-post--grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-column-gap: 2em;
+
+  figure {
+    margin-top: 4em;
+    margin-bottom: 0.75rem;
+    margin-inline-start: 5.5rem;
+    margin-inline-start: 1rem;
+    margin-inline-end: 1rem;
+
+    @media (max-width: $media-max-small) {
+      margin: 2em 1em 0.5em 1em;
+    }
+  }
+
+  // @media (min-width: $media-min-medium) {
+  //   grid-template-columns: 3fr 1fr;
+  // }
+}
+
+.body-block--div > h2 {
+  margin: 0rem;
+}
+.magazine-post--main-content,
+.magazine-post--author-content {
+  .block-content--root {
+    img {
+      width: 100%;
+    }
+  }
+  p {
+    font-size: 1.2rem;
+    margin-left: 5.5rem;
+    margin-right: 5.5rem;
+
+    @media (max-width: $media-max-small) {
+      font-size: 1rem;
+      margin-left: 1.875rem;
+      margin-right: 1.875rem;
+    }
+  }
+  ul {
+    margin: 0rem 6rem 1rem 6rem;
+
+    @media (max-width: $media-max-small) {
+      margin: 0rem 1rem 1rem 1rem;
+    }
+    // strong {
+    //   color: $color-accent;
+    // }
+  }
+  ul {
+    padding-inline-start: 1em;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 2.5rem 5.5rem;
+
+    @media (max-width: $media-max-small) {
+      margin: 0rem 1rem 1rem 1rem;
+    }
+  }
+  h1 {
+    font-size: 3em;
+  }
+  h2 {
+    font-size: 2em;
+  }
+  h3 {
+    font-size: 1.3em;
+  }
+  h4 {
+    font-size: 1.1em;
+  }
+  h5 {
+    font-size: 1em;
+  }
+  .block-content--figure-text {
+    font-weight: 100;
+    font-family: "averta_demo_pe_regular", sans-serif;
+    color: $color-light-grey;
+    margin-bottom: 3em !important;
+    @media (max-width: $media-max-small) {
+      margin-bottom: 2rem !important;
+    }
+
+    p {
+      font-size: 0.875rem;
+
+      @media (max-width: $media-max-small) {
+        font-size: 0.75rem;
+      }
+    }
+  }
+  a {
+    color: $color-accent;
+
+    @media (hover: hover) {
+      // @nest &:hover {
+      :hover {
+        color: inherit;
+      }
+    }
+  }
+  blockquote {
+    margin: 3rem 0;
+    font-size: 2.25rem;
+    font-style: normal !important;
+    margin-inline-start: 1rem;
+    margin-inline-end: 1rem;
+
+    @media (max-width: $media-max-medium) {
+      margin-inline-start: 1rem;
+      margin-inline-end: 1rem;
+    }
+
+    @media (max-width: $media-max-small) {
+      margin-inline-start: 1.875rem;
+      margin-inline-end: 1.875rem;
+    }
+  }
+}
+
+.magazine-post--author-content {
+  p {
+    font-size: 1rem;
+  }
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  .magazine-post--author-title {
+    margin-top: 4rem;
+  }
+}
+
+.magazine-post--metaContent {
+}
+
+.magazine-post--published-at {
+  margin: 1.5rem 0 3rem;
+}
+
+.magazine-post--categories {
+  border-top: 1px solid $color-black;
+  margin: 2rem 0 3rem;
+
+  // @nest & ul {
+  ul {
+    list-style: none;
+    margin: 0.75rem 0;
+    padding: 0;
+  }
+
+  // @nest & ul li {
+  ul li {
+    padding: 0.25rem 0;
+  }
+}
+
+.magazine-post--categories-headline {
+  margin: 0.5rem 0 0;
+}
+
+.magazine-post--disqus-container {
+  background-color: $color-white;
+  margin: 2rem;
+  // border-radius: 2rem;
+  padding: 2rem;
+}

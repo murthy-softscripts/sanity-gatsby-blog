@@ -1,0 +1,121 @@
+@import '../styles/media-queries.scss';
+@import '../styles/vars.scss';
+
+.live--site-subtitle {
+  color: $color-white;
+  font-size: 40px;
+  @media (max-width: $media-max-medium) {
+    font-size: 32px;
+  }
+  @media (max-width: $media-max-small) {
+    font-size: 32px;
+  }
+}
+.live--emphasis {
+  color: $color-accent;
+}
+.live--site-info {
+  font-size: 0.75rem;
+}
+
+.live--site-title {
+  color: $color-white;
+  margin-bottom: 1rem;
+  font-size: 64px;
+  @media (max-width: $media-max-medium) {
+    font-size: 40px;
+  }
+  @media (max-width: $media-max-small) {
+    font-size: 32px;
+  }
+}
+
+.live--body {
+  text-align: center;
+  margin: 2rem;
+  min-height: 100px;
+}
+.live--text-only {
+  padding: 2rem;
+}
+
+.live--archived-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 1rem;
+  row-gap: 1rem;
+  margin: 2rem;
+  @media (max-width: $media-max-medium) {
+    margin: 0rem;
+    grid-template-columns: 1fr;
+  }
+}
+
+.live--video-medium {
+  // width: 100%;
+  // margin: 0;
+  // margin: auto;
+  .live--video-container {
+    // margin: auto;
+    iframe {
+      display: block;
+      width: 30vw;
+      // height: 30vw;
+      height: calc(30vw / 1.77);
+    }
+  }
+  .live--iframe-youtube {
+  }
+  .live--site-subtitle {
+    font-size: 24px;
+    margin-top: 1rem;
+    margin-bottom: 0.4rem;
+    line-height: 1.1;
+    cursor: pointer;
+  }
+
+  @media (max-width: $media-max-medium) {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 2rem;
+    .live--video-container {
+      iframe {
+        display: block;
+        width: 80vw;
+        height: calc(80vw / 1.77);
+      }
+    }
+    .live--iframe-youtube {
+    }
+    .live--site-subtitle {
+      font-size: 2rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.live--video-large {
+  width: 80%;
+  margin: auto;
+  margin-bottom: 4rem;
+  .live--video-container {
+    iframe {
+      display: block;
+    }
+  }
+  .live--iframe-youtube {
+    width: 80vw;
+    height: calc(80vw / 1.77);
+  }
+  .live--site-subtitle {
+    font-size: 2rem;
+    margin: 2rem 5.5rem;
+    @media (max-width: $media-max-medium) {
+      margin: 2rem 0;
+    }
+    @media (max-width: $media-max-small) {
+      font-size: 2em;
+    }
+  }
+}
